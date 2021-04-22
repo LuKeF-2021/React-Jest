@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from 'axios';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 const CreateGarageButton = (garageObj) => {
     const header = {"Access-Control-Allow-Origin":"*"}
@@ -19,7 +21,8 @@ const DeleteGarageButton = (id) => {
     const header = {"Access-Control-Allow-Origin":"*"}
     const baseURL = 'http://18.133.181.100:9092'
     return(
-        axios.delete(`${baseURL}/garage/delete/${id}`, id, {header})
+        
+        axios.delete(`${baseURL}/garage/delete/${id}`, {header})
         .then(response => {
             console.log(response)
         }).catch(error => {
@@ -28,6 +31,8 @@ const DeleteGarageButton = (id) => {
     );
 
 }
+
+
 
 const ShowGarageButton = (garageObj) => {
     const header = {"Access-Control-Allow-Origin":"*"}
@@ -42,11 +47,11 @@ const ShowGarageButton = (garageObj) => {
     );
 
 }
-const ShowGarageByIDButton = (garageObj) => {
+const ShowGarageByIDButton = (id) => {
     const header = {"Access-Control-Allow-Origin":"*"}
     const baseURL = 'http://18.133.181.100:9092'
     return(
-        axios.get(`${baseURL}/garage/read`, garageObj, {header})
+        axios.get(`${baseURL}/garage/read/${id}`, {header})
         .then(response => {
             console.log(response)
         }).catch(error => {
@@ -60,7 +65,7 @@ const UpdateGarageButton = (id) => {
     const header = {"Access-Control-Allow-Origin":"*"}
     const baseURL = 'http://18.133.181.100:9092'
     return(
-        axios.put(`${baseURL}/garage/update/${id}`, id, {header})
+        axios.put(`${baseURL}/garage/update/${id}`, {header})
         .then(response => {
             console.log(response)
         }).catch(error => {
@@ -97,6 +102,9 @@ const CreateGarage = () => {
             <button className="btn" id="find-garages-by-id" onClick={() => ShowGarageByIDButton(garageObj)}>Find Garage By ID</button>
             <button className="btn" id="update-garage" onClick={() => UpdateGarageButton(garageObj)}>Update Garage</button>
             </form>
+            <Popup trigger={<button> Trigger</button>} position="right center">
+            <div>Popup content here !!</div>
+            </Popup>
         </>
     );  
   }
