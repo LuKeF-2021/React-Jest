@@ -1,6 +1,3 @@
-import CarTableRow from "./CarTableRow";
-import React, { useEffect, useState } from "react";
-
 const CarTable = () => {
 	const Placeholder = (e) => {
 		e.preventDefault();
@@ -57,8 +54,6 @@ const CarTable = () => {
 						<th>{item.garage}</th>
 					</tr>
 				))}
-
-				<CarTableRow />
 			</table>
 		</div>
 	);
