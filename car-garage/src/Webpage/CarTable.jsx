@@ -1,51 +1,14 @@
 import axios from "axios";
+import { useEffect, useState } from 'react';
 
 const CarTable = () => {
+
+
 	const Placeholder = (e) => {
 		e.preventDefault();
 	};
 
-	// const car = [
-	// 	{
-	// 		colour: "red",
-	// 		doors: 4,
-	// 		id: 1,
-	// 		make: "tesla",
-	// 		model: "model 3",
-	// 		name: "flash",
-	// 	},
-	// 	{
-	// 		colour: "blue",
-	// 		doors: 2,
-	// 		id: 2,
-	// 		make: "jaguar",
-	// 		model: "XJ",
-	// 		name: "shreddies",
-	// 	},
-	// 	{
-	// 		colour: "grey",
-	// 		doors: 4,
-	// 		id: 3,
-	// 		make: "bmw",
-	// 		model: "x27",
-	// 		name: "haydon",
-	// 	},
-	// ];
 
-	const ReadAll = () => {
-		const header = { "Access-Control-Allow-Origin": "*" };
-		const baseURL = "http://18.133.181.100:9092";
-		const allCarObj = axios
-			.get(`${baseURL}/car/read/`, { header })
-			.then((response) => {
-				console.log(response);
-			})
-			.catch((error) => {
-				console.error(error);
-			});
-			console.log(allCarObj);
-			return allCarObj;
-	};
 
 	const DeleteCarButton = (carID) => {
 		const header = { "Access-Control-Allow-Origin": "*" };
@@ -59,6 +22,39 @@ const CarTable = () => {
 				console.error(error);
 			});
 	};
+
+ //set our data
+ const [info, setInfo] = useState([]);
+ // setting out error obj
+ const [error,setError]= useState(null);
+ // loading...
+ const [isLoaded, setIsLoaded] = useState(false);
+
+ useEffect(() => {
+	const header = { "Access-Control-Allow-Origin": "*" };
+	const baseURL = "http://18.133.181.100:9092";
+
+	setTimeout(()=>{
+	axios
+		.get(`${baseURL}/car/read/`, { header })
+		.then((response)=>{
+			// console.log(response);
+			// console.log(response.data.data);
+			setIsLoaded(true);
+		   setInfo(response.data.data)
+		//    console.log("info",info);
+		})
+		.catch((error)=>{
+			setIsLoaded(true);
+		  setError(error);
+		})
+	 },1000 )
+},[])
+
+
+
+
+	
 
 
 
@@ -78,7 +74,7 @@ const CarTable = () => {
 				</thead>
 
 				<tbody>
-					{ReadAll.map((item) => (
+					{info.map((item) => (
 						<tr key={item.id}>
 							<th>{item.colour}</th>
 							<th>{item.doors}</th>
