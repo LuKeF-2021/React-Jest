@@ -33,6 +33,7 @@ const CarTable = () => {
 	return (
 		<div className="align-items: center">
 			<table>
+				<thead>
 				<tr>
 					<th>colour</th>
 					<th>doors</th>
@@ -42,7 +43,9 @@ const CarTable = () => {
 					<th>name</th>
 					<th>garage</th>
 				</tr>
+				</thead>
 
+				<tbody>
 				{car.map((item) => (
 					<tr>
 						<th>{item.colour}</th>
@@ -54,6 +57,7 @@ const CarTable = () => {
 						<th>{item.garage}</th>
 					</tr>
 				))}
+				</tbody>
 			</table>
 		</div>
 	);
