@@ -33,6 +33,7 @@ const CarTable = () => {
 	return (
 		<div>
 			<table>
+				<thead>
 				<tr>
 					<th>colour</th>
 					<th>doors</th>
@@ -42,9 +43,11 @@ const CarTable = () => {
 					<th>name</th>
 					<th>garage</th>
 				</tr>
+				</thead>
 
+				<tbody>
 				{car.map((item) => (
-					<tr>
+					<tr key={item.id}>
 						<th>{item.colour}</th>
 						<th>{item.doors}</th>
 						<th>{item.id}</th>
@@ -54,6 +57,7 @@ const CarTable = () => {
 						<th>{item.garage}</th>
 					</tr>
 				))}
+				</tbody>
 			</table>
 		</div>
 	);
