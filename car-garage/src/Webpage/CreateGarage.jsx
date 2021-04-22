@@ -1,4 +1,84 @@
+import { useState } from "react";
+import axios from 'axios';
+
+const CreateGarageButton = (garageObj) => {
+    const header = {"Access-Control-Allow-Origin":"*"}
+    const baseURL = 'http://18.133.181.100:9092'
+    return(
+        axios.post(`${baseURL}/garage/create`, garageObj, {header})
+        .then(response => {
+            console.log(response)
+        }).catch(error => {
+            console.error(error)
+        })
+    );
+
+}
+
+const DeleteGarageButton = (id) => {
+    const header = {"Access-Control-Allow-Origin":"*"}
+    const baseURL = 'http://18.133.181.100:9092'
+    return(
+        axios.delete(`${baseURL}/garage/delete/${id}`, id, {header})
+        .then(response => {
+            console.log(response)
+        }).catch(error => {
+            console.error(error)
+        })
+    );
+
+}
+
+const ShowGarageButton = (garageObj) => {
+    const header = {"Access-Control-Allow-Origin":"*"}
+    const baseURL = 'http://18.133.181.100:9092'
+    return(
+        axios.get(`${baseURL}/garage/read`, garageObj, {header})
+        .then(response => {
+            console.log(response)
+        }).catch(error => {
+            console.error(error)
+        })
+    );
+
+}
+const ShowGarageByIDButton = (garageObj) => {
+    const header = {"Access-Control-Allow-Origin":"*"}
+    const baseURL = 'http://18.133.181.100:9092'
+    return(
+        axios.get(`${baseURL}/garage/read`, garageObj, {header})
+        .then(response => {
+            console.log(response)
+        }).catch(error => {
+            console.error(error)
+        })
+    );
+
+}
+
+const UpdateGarageButton = (id) => {
+    const header = {"Access-Control-Allow-Origin":"*"}
+    const baseURL = 'http://18.133.181.100:9092'
+    return(
+        axios.put(`${baseURL}/garage/update/${id}`, id, {header})
+        .then(response => {
+            console.log(response)
+        }).catch(error => {
+            console.error(error)
+        })
+    );
+
+}
+
+
 const CreateGarage = () => {
+
+    const [garageName, setGarageName] = useState("");
+
+    const garageObj = {
+        "name": garageName
+
+    }
 
     const Placeholder = e => {
         e.preventDefault();
@@ -8,16 +88,14 @@ const CreateGarage = () => {
         <>
         <h2>Add Garage</h2>
             <form onSubmit={Placeholder}>
-            <label>ID: </label>
-            <input name="ID" type="text"></input>
             <label>Name: </label>
-            <input name="garageName" type="text"></input>
+            <input name="garageName" type="text" onChange={e => setGarageName(e.target.value)}></input>
             <br></br>
-            <button class="btn" id="add-garage">Add Garage</button>
-            <button class="btn" id="delete-garage">Delete Garage</button>
-            <button class="btn" id="show-garages">Show All Garage</button>
-            <button class="btn" id="find-garages-by-id">Find Garage By ID</button>
-            <button class="btn" id="update-garage">Update Garage</button>
+            <button className="btn" id="add-garage" onClick={() => CreateGarageButton(garageObj)}>Add Garage</button> 
+            <button className="btn" id="delete-garage" onClick={() => DeleteGarageButton(garageObj)}>Delete Garage</button>
+            <button className="btn" id="show-garages" onClick={() => ShowGarageButton(garageObj)}>Show All Garage</button>
+            <button className="btn" id="find-garages-by-id" onClick={() => ShowGarageByIDButton(garageObj)}>Find Garage By ID</button>
+            <button className="btn" id="update-garage" onClick={() => UpdateGarageButton(garageObj)}>Update Garage</button>
             </form>
         </>
     );  
