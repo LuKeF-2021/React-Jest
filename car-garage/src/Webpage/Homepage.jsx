@@ -1,5 +1,6 @@
 import CreateCar from "./CreateCar";
 import CreateGarage from "./CreateGarage";
+import './WebpageStyling.css';
 
 const Homepage = () => {
     return( 
