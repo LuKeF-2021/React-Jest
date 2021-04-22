@@ -15,6 +15,20 @@ const CreateCarButton = (carObj) => {
 
 }
 
+const DeleteCarButton = (id) => {
+    const header = {"Access-Control-Allow-Origin":"*"}
+    const baseURL = 'http://18.133.181.100:9092'
+    return(
+        axios.delete(`${baseURL}/car/delete/${id}`, {header})
+        .then(response => {
+            console.log(response)
+        }).catch(error => {
+            console.error(error)
+        })
+    );
+
+}
+
 const CreateCar = () => {
 
     const [carColour, setCarColour] = useState("");
