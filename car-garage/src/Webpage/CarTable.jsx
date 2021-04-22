@@ -23,7 +23,7 @@ const CarTable = () => {
 
 	return (
 		<div>
-			<table style="width:100%">
+			<table>
 				<tr>
 					<th>colour</th>
 					<th>doors</th>
@@ -31,6 +31,7 @@ const CarTable = () => {
 					<th>make</th>
 					<th>model</th>
 					<th>name</th>
+                    <th>garage</th>
 				</tr>
 
 				<CarTableRow />
