@@ -1,9 +1,58 @@
 input {
-    margin-right: 20px;
-    width: 10%;
-    padding: 6px;
-    border: 1px solid black;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin-right: 20px;
+	width: 10%;
+	padding: 6px;
+	border: 1px solid black;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: yellow;
+}
+
+
+
+#table_parent {
+    text-align: center;
+}
+h2 {
+    color: skyblue;
+}
+
+tr {
+    color: rgb(255, 145, 0);
+    align-items: center;
+}
+
+th {
+    padding: 10px;
+    border: #2701ff;
+    border-style: solid;
+    
+}
+
+
+button {
+	font-size: 12pt;
+
+}
+
+.btn {
+	background-color: #ff3da8;
+	color: white;
+	padding: 14px 28px;
+	cursor: pointer;
+	border-radius: 12px;
+}
+.btn:hover {
+	color: #ffa115;
+	background-color: white;
+}
+.btn:active {
+	color: #01ff63;
+	background-color: white;
+}
+.container {
+	border: 2px solid white;
+	border-radius: 5px;
+	padding: 20px;
 }

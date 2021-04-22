@@ -31,7 +31,7 @@ const CarTable = () => {
 	];
 
 	return (
-		<div>
+		<div className="align-items: center">
 			<table>
 				<tr>
 					<th>colour</th>
