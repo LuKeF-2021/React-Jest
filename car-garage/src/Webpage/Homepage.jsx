@@ -3,9 +3,11 @@ import CreateGarage from "./CreateGarage";
 
 const Homepage = () => {
     return( 
-      <>
-    <CreateCar/>
+    <>
     <CreateGarage/>
+    <br></br>
+    <br></br>
+    <CreateCar/>
     </>
     );
   }
