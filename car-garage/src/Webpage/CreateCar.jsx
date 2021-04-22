@@ -6,6 +6,7 @@ const CreateCar = () => {
 
     return( 
         <>
+        <h2>Add Car</h2>
             <form onSubmit={Placeholder}>
             <label>ID: </label>
             <input name="ID" type="text"></input>
