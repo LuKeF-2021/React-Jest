@@ -1,9 +1,51 @@
 input {
-    margin-right: 20px;
-    width: 10%;
-    padding: 6px;
-    border: 1px solid black;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin-right: 20px;
+	width: 10%;
+	padding: 6px;
+	border: 1px solid black;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
+
+
+thead {
+	background-color: #6D7275;
+}
+
+table {
+	border-collapse: collapse;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+tr {
+    color: black;
+    align-items: center;
+	border: 1px solid black;
+}
+
+th { text-align: left ; font-weight: 100; font-size: 16px; border: 1px solid black; padding-bottom: 20px}
+
+
+button {
+	font-size: 16px;
+}
+
+.btn {
+	background-color: #0C120C;
+	color: #C7D6D5;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 14px 28px;
+	cursor: pointer;
+	border-radius: 12px;
+}
+.btn:hover {
+	color: #0C120C;
+	background-color: #C7D6D5;
+}
+.btn:active {
+	color: #0C120C;
+	background-color: #C7D6D5;
+}
+

@@ -2,6 +2,7 @@
 const CarTable = ({id,make,model, doors, colour, name, garage}) => {
 	// console.log(cars)
 	return (
+
 		<>
 			<td>{id}</td>
 			<td>{make}</td>
@@ -11,6 +12,7 @@ const CarTable = ({id,make,model, doors, colour, name, garage}) => {
 			<td>{name}</td>
 			<td>{garage}</td>
 		</>
+
 	);
 };
 export default CarTable;
