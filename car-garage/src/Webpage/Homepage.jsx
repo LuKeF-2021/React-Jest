@@ -11,7 +11,6 @@ const Homepage = () => {
 			<br></br>
 			<br></br>
 			<CreateCar />
-			<button type="button" class="btn">create car</button>
 			<br></br>
 			<br></br>
 			<CarTable />
